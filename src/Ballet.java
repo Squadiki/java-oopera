@@ -1,4 +1,19 @@
-package PACKAGE_NAME;
+import java.util.ArrayList;
 
-public class Ballet {
+public class Ballet extends MusicalShow {
+    private Person choreographer;
+
+    public Ballet(String title, int duration, Director director, ArrayList<Actor> listOfActors,
+                  Person musicAuthor, String librettoText, Person choreographer) {
+        super(title, duration, director, listOfActors, musicAuthor, librettoText);
+        this.choreographer = choreographer;
+    }
+
+    @Override
+    public void printListOfActors() {
+        System.out.println("Актёры, участвующие в балете:");
+        for (Actor actor : listOfActors) {
+            System.out.println(actor.name + " " + actor.surname + " (" + actor.height + " см).");
+        }
+    }
 }

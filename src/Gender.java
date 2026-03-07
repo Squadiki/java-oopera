@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
-
 public enum Gender {
+    MALE,
+    FEMALE
 }
