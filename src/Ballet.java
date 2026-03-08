@@ -9,11 +9,12 @@ public class Ballet extends MusicalShow {
         this.choreographer = choreographer;
     }
 
+    // Вывод списка актёров
     @Override
     public void printListOfActors() {
         System.out.println("Актёры, участвующие в балете:");
         for (Actor actor : listOfActors) {
-            System.out.println(actor.name + " " + actor.surname + " (" + actor.height + " см).");
+            System.out.println(actor);
         }
     }
 }

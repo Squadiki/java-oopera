@@ -9,11 +9,12 @@ public class Opera extends MusicalShow {
         this.choirSize = choirSize;
     }
 
+    // Вывод списка актёров
     @Override
     public void printListOfActors() {
         System.out.println("Актёры, участвующие в опере:");
         for (Actor actor : listOfActors) {
-            System.out.println(actor.name + " " + actor.surname + " (" + actor.height + " см).");
+            System.out.println(actor);
         }
     }
 }

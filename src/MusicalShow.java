@@ -11,6 +11,7 @@ public class MusicalShow extends Show {
         this.librettoText = librettoText;
     }
 
+    // Вывод текста либретто
     public void printLibrettoText() {
         System.out.println( "Либретто: " + librettoText);
     }

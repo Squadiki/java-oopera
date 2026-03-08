@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Theatre {
     public static void main(String[] args) {
+        Scanner scanner  = new Scanner(System.in); // Здесь будет необходима только для уточнения актёра при замене
+
         ArrayList<Actor> listOfActorsSpectacle = new ArrayList<>();
         ArrayList<Actor> listOfActorsBallet = new ArrayList<>();
         ArrayList<Actor> listOfActorsOpera = new ArrayList<>();
@@ -33,16 +36,23 @@ public class Theatre {
         opera.addActor(actor2);
         opera.addActor(actor3);
 
+        System.out.println("-".repeat(20));
+
         spectacle.printListOfActors();
+        System.out.println("-".repeat(20));
         ballet.printListOfActors();
+        System.out.println("-".repeat(20));
         opera.printListOfActors();
+        System.out.println("-".repeat(20));
 
-        ballet.changeOfActor(actor1, "Стрельцова");
+        ballet.changeOfActor(actor1, "Стрельцова", scanner);
+        System.out.println("-".repeat(20));
         ballet.printListOfActors();
-
-        spectacle.changeOfActor(actor3, "Пугачёв");
-
+        System.out.println("-".repeat(20));
+        spectacle.changeOfActor(actor3, "Пугачёв", scanner);
+        System.out.println("-".repeat(20));
         opera.printLibrettoText();
         ballet.printLibrettoText();
+
     }
 }
