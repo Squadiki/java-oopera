@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Theatre {
     public static void main(String[] args) {
-        Scanner scanner  = new Scanner(System.in); // Здесь будет необходима только для уточнения актёра при замене
+        Scanner scanner  = new Scanner(System.in);
 
         ArrayList<Actor> listOfActorsSpectacle = new ArrayList<>();
         ArrayList<Actor> listOfActorsBallet = new ArrayList<>();
@@ -19,11 +19,11 @@ public class Theatre {
         Person musicAuthor = new Person("Владимир", "Смирнов", Gender.MALE);
         Person choreographer = new Person("Валерия", "Конькова", Gender.FEMALE);
 
-        Show spectacle = new Show("Ёжик в тумане", 78, director1, listOfActorsSpectacle);
-        Ballet ballet = new Ballet("Лебединое озеро", 165, director2, listOfActorsBallet, musicAuthor,
+        Show spectacle = new Show("Ёжик в тумане", 78, director1, listOfActorsSpectacle, scanner);
+        Ballet ballet = new Ballet("Лебединое озеро", 165, director2, listOfActorsBallet, scanner, musicAuthor,
                 "С 1997 года спектакль сохраняется в репертуаре «Кремлевского балета» и неизменно имеет " +
                         "большой зрительский успех.", choreographer);
-        Opera opera = new Opera("Королевские игры", 121, director1, listOfActorsOpera, musicAuthor,
+        Opera opera = new Opera("Королевские игры", 121, director1, listOfActorsOpera, scanner, musicAuthor,
                 "Сочинение драматурга Григория Горина и композитора Шандора Каллоша.", 3);
 
         spectacle.addActor(actor1);

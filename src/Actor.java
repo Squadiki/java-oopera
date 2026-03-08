@@ -10,7 +10,7 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Имя: " + name + ", фамилия: " + surname + " (рост: " + height + " см.)";
+        return super.toString() + " (рост: " + height + " см.)";
     }
 
     @Override
@@ -18,10 +18,7 @@ public class Actor extends Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Actor actor = (Actor) o;
-        return Objects.equals(name, actor.name) &&
-                Objects.equals(surname, actor.surname) &&
-                Objects.equals(gender, actor.gender) &&
-                Objects.equals(height, actor.height);
+        return super.equals(o) && Objects.equals(height, actor.height);
     }
 
     @Override

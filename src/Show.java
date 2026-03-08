@@ -8,11 +8,12 @@ public class Show {
     protected ArrayList<Actor> listOfActors;
     Scanner scanner; // Здесь будет необходима только для уточнения актёра при замене
 
-    public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors) {
+    public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors, Scanner scanner) {
         this.title = title;
         this.duration = duration;
         this.director = director;
         this.listOfActors = listOfActors;
+        this.scanner = scanner;
     }
 
     // Вывод списка актёров
@@ -30,11 +31,9 @@ public class Show {
 
     // Добавление актёра
     public void addActor(Actor newActor) {
-        for (Actor actor : listOfActors) {
-            if (listOfActors.contains(newActor)) {
-                System.out.println("Данный актёр уже в составе!");
-                return;
-            }
+        if (listOfActors.contains(newActor)) {
+            System.out.println("Данный актёр уже в составе!");
+            return;
         }
         listOfActors.add(newActor);
         System.out.println("Актёр добавлен!");
@@ -59,11 +58,10 @@ public class Show {
                     return;
                 }
             }
-        // Если от 2-х, то прошу уточнить имя, а потом заменяю нужного актёра
+            // Если от 2-х, то прошу уточнить имя, а потом заменяю нужного актёра
         } else if (counterSameSurnames >= 2) {
-            System.out.print("Актёров с фамилией '" + surname + "': "  + counterSameSurnames +
+            System.out.print("Актёров с фамилией '" + surname + "': " + counterSameSurnames +
                     ". Пожалуйста, уточните имя актёра для замены: ");
-            this.scanner = scanner;
             String scanName = scanner.next();
             for (Actor actor : listOfActors) {
                 if (actor.surname.equals(surname) && actor.name.equals(scanName)) {

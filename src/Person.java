@@ -11,6 +11,10 @@ public class Person {
         this.gender = gender;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Имя: " + name + ", фамилия: " + surname;
@@ -20,9 +24,10 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Actor actor = (Actor) o;
-        return Objects.equals(name, actor.name) &&
-                Objects.equals(surname, actor.surname);
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) &&
+                Objects.equals(surname, person.surname) &&
+                Objects.equals(gender, person.gender);
     }
 
     @Override

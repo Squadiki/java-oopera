@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Opera extends MusicalShow {
     private int choirSize;
 
-    public Opera(String title, int duration, Director director, ArrayList<Actor> listOfActors,
+    public Opera(String title, int duration, Director director, ArrayList<Actor> listOfActors, Scanner scanner,
                  Person musicAuthor, String librettoText, int choirSize) {
-        super(title, duration, director, listOfActors, musicAuthor, librettoText);
+        super(title, duration, director, listOfActors, scanner, musicAuthor, librettoText);
         this.choirSize = choirSize;
     }
 
